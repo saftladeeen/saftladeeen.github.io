@@ -1,17 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
-import reportWebVitals from './reportWebVitals';
+
+
+import Header from './components/header.js'
+import './index.css'
+import Main from './components/Main.js'
+
 
 ReactDOM.render(
   
-      <App />,
-    
+  <div className='wrapper'>
+      <div>
+        <Header/>
+        <Main className='main'/>
+      </div>
+  </div>,
   
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

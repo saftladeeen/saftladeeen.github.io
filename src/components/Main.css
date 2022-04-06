@@ -1,5 +1,6 @@
 * {
     font-family: sans-serif;
+    user-select: none;
 }
 
 .shopKnopf {
@@ -11,3 +12,75 @@
     
 }
 
+.test {
+    
+    
+    background-color: red;
+}
+
+.wrapperMain {
+    
+    justify-content: center;
+    display: flex;
+}
+
+.schmiddiWechselnText {
+    padding: 12px;
+    color: #EAEBED;
+    text-align: center;
+}
+
+.toggleShop {
+    background-color: #0A8754;
+    width: fit-content;
+    border-radius: 8px;
+    align-self: center;
+    margin-top: 12px;
+}
+
+.infos {
+    color: #EAEBED;
+    text-align: center;
+    margin: 12px;
+    
+}
+
+.infosSchmiddis {
+    color: #EAEBED;
+    text-align: center;
+    margin: 12px;
+    font-weight: bold;
+}
+
+.schmiddiWechseln {
+    background-color: #0A8754;
+    width: fit-content;
+    border-radius: 8px;
+    align-self: center;
+    margin-bottom: 12px;
+}
+
+.knopfinaktiv {
+    background-color: #67877A;
+    width: fit-content;
+    border-radius: 8px;
+    align-self: center;
+    margin-bottom: 12px;
+}
+
+
+.autoUpgradeKnopf {
+    background-color: #0A8754;
+    width: fit-content;
+    border-radius: 8px;
+    align-self: center;
+    margin-top: 12px;
+}
+
+.img {
+    width: 150px;
+    height: 150px;
+    margin: 5px 0px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}

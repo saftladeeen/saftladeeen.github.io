@@ -9,7 +9,7 @@ function Main() {
     const [punkte, setPunkte] = useState(0);
     const [multiplier, setMultiplier] = useState(1);
     const [upgradeKosten, setUpgradeKosten] = useState(1);
-    const [kopieMultiplier, setKopieMultiplier] = useState(1);
+    const [kopieMultiplier, setKopieMultiplier] = useState(3);
     const [gesamtClicks, setGesamtClicks] = useState(0);
 
     const [kostenMultiplier, setKostenMultiplier] = useState(1);
@@ -24,29 +24,30 @@ function Main() {
     }
 
 //Auto Upgrader:
-    /*const autoUpgrade = (AutoBool, inputKosten, inputUpgradeKosten, inputMultiplierKopie, inputMultiplier) => {
-        let MPunkte = inputKosten;
+    const autoUpgrade = (AutoBool, inputPunkte, inputKosten, inputUpgradeKosten) => {
+        let MPunkte = inputPunkte;
         let Mkosten = inputKosten;
-        let MupgradeKosten = inputUpgradeKosten;
-        let MmultiplierKopie = inputMultiplierKopie;
-        let Mmultiplier = inputMultiplier;
+        let MupgradeKosten = inputUpgradeKosten
+        
+        
+        
         let aktiv = AutoBool;
         while(aktiv) {
             if(MPunkte >= MupgradeKosten) {    
-                setMultiConst(multiConst + 3);
+                setKostenMultiplier(kostenMultiplier + 3);
                 Mkosten += 3;
-                setCred(cred -  upgradeCosts);
+                setPunkte(punkte -  upgradeKosten);
                 MPunkte -= MupgradeKosten;
                 setMultiplier(multiplier + 2);
-                setUpgradeKosten(upgradeCosts + 3 * multiConst)
+                setUpgradeKosten(upgradeKosten + 3 * kostenMultiplier)
                 MupgradeKosten = MupgradeKosten + 3 * Mkosten;
                 setKopieMultiplier(multiplier + 4);
-                MmultiplierKopie = Mmultiplier + 4;
+                
             } else {
                 break;
             }
         }
-    }*/
+    }
 
     //Auto Upgrader Toggle:
     const [auBool, setAuBool] = useState(false);
@@ -159,11 +160,90 @@ function Main() {
 
     if(shopBool) {
         return (
-            <div className='containerMain'>
-                <div className='shopKnopf' onClick={toggleShop}>
-                    <h1>Moin</h1>
+        <div>
+            <div className='wrapperMain'>
+                <div className='toggleShop' onClick={toggleShop}>
+                    <p className='schmiddiWechselnText'>Shop schließen</p>
                 </div>
             </div>
+            <div className='wrapperMain'>
+                <p className='infos'>Schmiddis: </p>
+            </div>
+
+            <div className='wrapperMain'>
+                <p className='infosSchmiddis'>{punkte}</p>
+            </div>
+            
+            <div className='wrapperMain'>
+                <div onClick={kaufen} className={upgradeKnopfBool ? 'schmiddiWechseln' : 'knopfinaktiv'}>
+                    <p className='schmiddiWechselnText'>Upgrade: {upgradeKosten}</p>
+                </div>
+            </div>
+
+            <div className='wrapperMain'>
+                <p className='infos'>Akuteller Multiplier: {multiplier}</p>
+            </div>
+
+            <div className='wrapperMain'>
+                <p className='infos'>Nächster Multiplier: {kopieMultiplier}</p>
+            </div>
+
+            <div className='wrapperMain'>
+                <div onClick={AutoClickerKaufen} className={aci ? 'schmiddiWechseln' : 'knopfinaktiv'}>
+                    <p className='schmiddiWechselnText'>{acText}</p>
+                </div>
+            </div>
+
+            
+
+            <div className='wrapperMain'>
+                <p className='infos'>Der Autoclicker gibt aktuell {acv} Schmiddis/s</p>
+            </div>
+
+            <div className='wrapperMain'>
+                <div onClick={toggleAutoUpgrader} className='autoUpgradeKnopf'>
+                    <p className='schmiddiWechselnText'>{auText}</p>
+                </div>
+            </div>
+            <div onClick={autoUpgrade(auBool, punkte, kostenMultiplier, upgradeKosten)}></div>
+        </div> 
+            
+        )
+    } else {
+        return (
+            <div>
+                <div className='wrapperMain'>
+                    <div onClick={clickHandler}>
+                        <img src={schmiddiZeichnung} className='img' alt='schmiddi zeichnung'/>
+                    </div>
+                </div>
+            
+                <div className='wrapperMain'>
+                    <p className='infos'>Du hast den Schmiddi {gesamtClicks} mal angeklickt</p>
+                </div>
+                <div className='wrapperMain'>
+                    <p className='infos'>Schmiddis: </p>
+                </div>
+
+                <div className='infosSchmiddis'>
+                    <p className='infos'>{punkte}</p>
+                </div>
+
+                <div className='wrapperMain'>
+                    <p className='infos'>Du hast insgesamt {clicks} Schmiddis gesammelt</p>
+                </div>
+
+                <div className='wrapperMain'>
+                    <div className='toggleShop' onClick={toggleShop}>
+                        <p className='schmiddiWechselnText'>Shop öffnen</p>
+                    </div>
+                </div>
+
+
+                <div onClick={autoUpgrade(auBool, punkte, kostenMultiplier, upgradeKosten)}></div>
+
+            </div>
+
         )
     }
     
