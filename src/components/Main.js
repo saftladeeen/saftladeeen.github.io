@@ -5,6 +5,9 @@ const schmiddiZeichnung = require('./schmiddiZeichnung.png');
 
 function Main() {
 
+
+
+
     const [clicks, setClicks] = useState(0);
     const [punkte, setPunkte] = useState(0);
     const [multiplier, setMultiplier] = useState(1);
@@ -22,6 +25,11 @@ function Main() {
         setPunkte(punkte + multiplier);
         setGesamtClicks(gesamtClicks + 1);
     }
+
+//document title:
+
+    document.title = "Schmiddi Clicker"
+
 
 //Auto Upgrader:
     const autoUpgrade = (AutoBool, inputPunkte, inputKosten, inputUpgradeKosten) => {
@@ -160,89 +168,64 @@ function Main() {
 
     if(shopBool) {
         return (
-        <div>
-            <div className='wrapperMain'>
+        <div className='wrapperMain'>
+            
                 <div className='toggleShop' onClick={toggleShop}>
                     <p className='schmiddiWechselnText'>Shop schließen</p>
                 </div>
-            </div>
-            <div className='wrapperMain'>
+     
                 <p className='infos'>Schmiddis: </p>
-            </div>
-
-            <div className='wrapperMain'>
+      
                 <p className='infosSchmiddis'>{punkte}</p>
-            </div>
-            
-            <div className='wrapperMain'>
+ 
                 <div onClick={kaufen} className={upgradeKnopfBool ? 'schmiddiWechseln' : 'knopfinaktiv'}>
                     <p className='schmiddiWechselnText'>Upgrade: {upgradeKosten}</p>
                 </div>
-            </div>
-
-            <div className='wrapperMain'>
+      
                 <p className='infos'>Akuteller Multiplier: {multiplier}</p>
-            </div>
-
-            <div className='wrapperMain'>
+    
                 <p className='infos'>Nächster Multiplier: {kopieMultiplier}</p>
-            </div>
-
-            <div className='wrapperMain'>
+     
                 <div onClick={AutoClickerKaufen} className={aci ? 'schmiddiWechseln' : 'knopfinaktiv'}>
                     <p className='schmiddiWechselnText'>{acText}</p>
                 </div>
-            </div>
-
+ 
             
-
-            <div className='wrapperMain'>
                 <p className='infos'>Der Autoclicker gibt aktuell {acv} Schmiddis/s</p>
-            </div>
 
-            <div className='wrapperMain'>
                 <div onClick={toggleAutoUpgrader} className='autoUpgradeKnopf'>
                     <p className='schmiddiWechselnText'>{auText}</p>
                 </div>
-            </div>
             <div onClick={autoUpgrade(auBool, punkte, kostenMultiplier, upgradeKosten)}></div>
         </div> 
             
         )
     } else {
         return (
-            <div>
-                <div className='wrapperMain'>
-                    <div onClick={clickHandler}>
-                        <img src={schmiddiZeichnung} className='img' alt='schmiddi zeichnung'/>
-                    </div>
+            <div className='wrapperMain'>
+                
+                <div onClick={clickHandler} style={{alignSelf: 'center'}}>
+                    <img src={schmiddiZeichnung} className='img' alt='schmiddi zeichnung'/>
                 </div>
-            
-                <div className='wrapperMain'>
-                    <p className='infos'>Du hast den Schmiddi {gesamtClicks} mal angeklickt</p>
-                </div>
-                <div className='wrapperMain'>
-                    <p className='infos'>Schmiddis: </p>
-                </div>
+  
+                <p className='infos'>Du hast den Schmiddi {gesamtClicks} mal angeklickt</p>
+
+                <p className='infos'>Schmiddis: </p>
+                
 
                 <div className='infosSchmiddis'>
                     <p className='infos'>{punkte}</p>
                 </div>
 
-                <div className='wrapperMain'>
-                    <p className='infos'>Du hast insgesamt {clicks} Schmiddis gesammelt</p>
+                <p className='infos'>Du hast insgesamt {clicks} Schmiddis gesammelt</p>
+
+                <div className='toggleShop' onClick={toggleShop}>
+                    <p className='schmiddiWechselnText'>Shop öffnen</p>
                 </div>
+  
+            <div onClick={autoUpgrade(auBool, punkte, kostenMultiplier, upgradeKosten)}></div>
 
-                <div className='wrapperMain'>
-                    <div className='toggleShop' onClick={toggleShop}>
-                        <p className='schmiddiWechselnText'>Shop öffnen</p>
-                    </div>
-                </div>
-
-
-                <div onClick={autoUpgrade(auBool, punkte, kostenMultiplier, upgradeKosten)}></div>
-
-            </div>
+        </div>
 
         )
     }
