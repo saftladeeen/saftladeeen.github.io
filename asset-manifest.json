@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.03f9acad.css",
-    "main.js": "/static/js/main.85130f78.js",
+    "main.js": "/static/js/main.83e9aa37.js",
     "static/media/schmiddiZeichnung.png": "/static/media/schmiddiZeichnung.5dc71d19808a676fe5bc.png",
     "index.html": "/index.html",
     "main.03f9acad.css.map": "/static/css/main.03f9acad.css.map",
-    "main.85130f78.js.map": "/static/js/main.85130f78.js.map"
+    "main.83e9aa37.js.map": "/static/js/main.83e9aa37.js.map"
   },
   "entrypoints": [
     "static/css/main.03f9acad.css",
-    "static/js/main.85130f78.js"
+    "static/js/main.83e9aa37.js"
   ]
 }
