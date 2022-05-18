@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.f69edb15.css",
-    "main.js": "/static/js/main.09874233.js",
+    "main.js": "/static/js/main.8e4cc8bb.js",
     "static/media/schmiddiclickerlogo.png": "/static/media/schmiddiclickerlogo.4e9f73c18d1ce617fc9e.png",
     "static/media/schmiddiZeichnung.png": "/static/media/schmiddiZeichnung.5dc71d19808a676fe5bc.png",
     "index.html": "/index.html",
     "main.f69edb15.css.map": "/static/css/main.f69edb15.css.map",
-    "main.09874233.js.map": "/static/js/main.09874233.js.map"
+    "main.8e4cc8bb.js.map": "/static/js/main.8e4cc8bb.js.map"
   },
   "entrypoints": [
     "static/css/main.f69edb15.css",
-    "static/js/main.09874233.js"
+    "static/js/main.8e4cc8bb.js"
   ]
 }
