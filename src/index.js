@@ -5,14 +5,13 @@ import ReactDOM from 'react-dom';
 import Header from './components/header.js'
 import './index.css'
 import Main from './components/Main.js'
-
+import SchmiddiClicker from './components/schmiddiClicker'
 
 ReactDOM.render(
   
   <div className='wrapper'>
       <div>
-        <Header/>
-        <Main className='main'/>
+        <SchmiddiClicker/>
       </div>
   </div>,
   

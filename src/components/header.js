@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 
 function randomInt(maxVal) {
     return Math.floor(Math.random() * maxVal)
@@ -43,10 +44,18 @@ function Header() {
         }/*, [] */);
 
 
+    
+    //tl.from('header', { duration: 0.6, ease: 'power2. out', y: -60 })    
+    const headerRef = useRef();
+    useEffect(() => {
+        let tl = gsap.timeline({delay: 1});
+        tl.from(headerRef.current, { duration: 0.6, ease: 'power2. out', y: -60, opacity: 0 })
+    }, [])
+
     return (
         <div>
             
-            <h1 style={{color: activeColorA, fontSize: 40, marginBottom: 20, fontFamily: 'sans-serif'}}>SCHMIDDI CLICKER</h1>
+            <h1 ref={headerRef} style={{color: activeColorA, fontSize: 40, marginBottom: 20, fontFamily: 'sans-serif', opacity: 100}}>SCHMIDDI CLICKER</h1>
             
         </div>
     )

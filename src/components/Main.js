@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Main.css'
-
+import { gsap } from 'gsap';
 const schmiddiZeichnung = require('./schmiddiZeichnung.png');
 
 function Main() {
@@ -166,6 +166,15 @@ function Main() {
     });
 
 
+    const mainRef = useRef();
+    
+    useEffect(() => {
+        let tl = gsap.timeline({delay: 2});
+        tl.from(mainRef.current, { duration: 0.6, ease: 'power2. out', x: -60, opacity: 0 })
+    }, [])
+
+    
+
     if(shopBool) {
         return (
         <div className='wrapperMain'>
@@ -202,7 +211,7 @@ function Main() {
         )
     } else {
         return (
-            <div className='wrapperMain'>
+            <div className='wrapperMain' ref={mainRef}>
                 
                 <div onClick={clickHandler} style={{alignSelf: 'center'}}>
                     <img src={schmiddiZeichnung} className='img' alt='schmiddi zeichnung'/>

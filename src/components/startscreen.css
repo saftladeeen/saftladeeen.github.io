@@ -1,0 +1,36 @@
+.mainText {
+    color: white;
+    font-size: 100px;
+    
+    margin-left: -110%;
+    margin-top: -10%;
+}
+
+.wrapperStartscreen {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.spielenKnopf {
+    margin-left: -110%;
+    margin-top: 5%;
+    background-color: #0A8754;
+    width: 150px;
+    border-radius: 8px;
+}
+
+
+
+.knopfText {
+    color: #EAEBED;
+    text-align: center;
+    margin: 12px;
+}
+
+.mainImg {
+    width: 500px;
+    position: absolute;
+    top: 20%;
+    right: 20%;
+}
+
