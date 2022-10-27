@@ -1,11 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-
-import Header from './components/header.js'
 import './index.css'
-import Main from './components/Main.js'
 import SchmiddiClicker from './components/schmiddiClicker'
+
+import Video from './components/test'
 
 ReactDOM.render(
   
@@ -18,3 +16,9 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+/*ReactDOM.render(
+  <div>
+    <Video/>
+  </div>, document.getElementById('root')
+);
+*/

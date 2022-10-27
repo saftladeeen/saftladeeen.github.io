@@ -1,34 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
-function randomInt(maxVal) {
-    return Math.floor(Math.random() * maxVal)
+function randomInt(max) {
+    return Math.floor(Math.random() * max)
 }
 
-function Header() {
+function Header(props) {
     
-    //const [activeColor, setActiveColor] = useState(true)
-    //let colors = ['blue', 'green', 'pink', 'yellow', 'red'];
+
     const [activeColorA, setActiveColorA] = useState('#001eff')
     let colors = ['#4deeea', '#74ee15', '#ffe700', '#f000ff', '#001eff'];
-    
-    /*function activeColorSetter() {
-        if(activeColor) {
-            setActiveColor(false);
-        } else {
-            setActiveColor(true);
-        }
-    }
-    */
-    /*useEffect(() => {
-        const interval = setInterval(() => {
-          
-          activeColorSetter()
-          
-        }, 1000);
-        return () => clearInterval(interval);
-        }, comment [] comment);
-    */
     
     function setRandomColor() {
         setActiveColorA(colors[randomInt(5)])
@@ -45,7 +26,7 @@ function Header() {
 
 
     
-    //tl.from('header', { duration: 0.6, ease: 'power2. out', y: -60 })    
+
     const headerRef = useRef();
     useEffect(() => {
         let tl = gsap.timeline({delay: 1});
@@ -55,7 +36,7 @@ function Header() {
     return (
         <div>
             
-            <h1 ref={headerRef} style={{color: activeColorA, fontSize: 40, marginBottom: 20, fontFamily: 'sans-serif', opacity: 100}}>SCHMIDDI CLICKER</h1>
+            <h1 ref={headerRef} style={{textAlign: 'center', color: activeColorA, fontSize: props.customFontSize, marginBottom: 20, fontFamily: 'sans-serif', opacity: 100}}>SCHMIDDI CLICKER</h1>
             
         </div>
     )

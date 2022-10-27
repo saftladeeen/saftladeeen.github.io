@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Main.css'
 import { gsap } from 'gsap';
+import Video from './test';
 const schmiddiZeichnung = require('./schmiddiZeichnung.png');
+
 
 function Main() {
 
@@ -165,6 +167,7 @@ function Main() {
         return () => clearInterval(interval);
     });
 
+    
 
     const mainRef = useRef();
     
@@ -173,7 +176,6 @@ function Main() {
         tl.from(mainRef.current, { duration: 0.6, ease: 'power2. out', x: -60, opacity: 0 })
     }, [])
 
-    
 
     if(shopBool) {
         return (

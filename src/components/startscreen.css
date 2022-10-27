@@ -1,4 +1,5 @@
-.mainText {
+@media only screen and (min-width: 769px) {
+    .mainText {
     color: white;
     font-size: 100px;
     
@@ -19,8 +20,6 @@
     border-radius: 8px;
 }
 
-
-
 .knopfText {
     color: #EAEBED;
     text-align: center;
@@ -33,4 +32,28 @@
     top: 20%;
     right: 20%;
 }
+}
+@media only screen and (max-width: 768px) {
+    .mainText {
+        color: #EAEBED;
+        
+    } 
 
+    .mainImg {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        z-index: 1;
+        
+    }
+    .wrapperStartscreen {
+        background-color: rebeccapurple;
+        z-index: 2;
+        position: relative;
+        margin-top: 0%;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+    }
+}
