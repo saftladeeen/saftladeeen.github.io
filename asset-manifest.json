@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.390d1372.css",
-    "main.js": "/static/js/main.e7daf7f9.js",
-    "static/media/sukadev.mp4": "/static/media/sukadev.e33c47f79b6ffe2aeb8b.mp4",
+    "main.css": "/static/css/main.90c5b901.css",
+    "main.js": "/static/js/main.13deacf7.js",
     "static/media/schmiddiclickerlogo.png": "/static/media/schmiddiclickerlogo.4e9f73c18d1ce617fc9e.png",
     "static/media/schmiddiZeichnung.png": "/static/media/schmiddiZeichnung.5dc71d19808a676fe5bc.png",
     "index.html": "/index.html",
-    "main.390d1372.css.map": "/static/css/main.390d1372.css.map",
-    "main.e7daf7f9.js.map": "/static/js/main.e7daf7f9.js.map"
+    "main.90c5b901.css.map": "/static/css/main.90c5b901.css.map",
+    "main.13deacf7.js.map": "/static/js/main.13deacf7.js.map"
   },
   "entrypoints": [
-    "static/css/main.390d1372.css",
-    "static/js/main.e7daf7f9.js"
+    "static/css/main.90c5b901.css",
+    "static/js/main.13deacf7.js"
   ]
 }
